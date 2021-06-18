@@ -2,9 +2,9 @@
 
 \usepackage{graphicx}
 \usepackage{booktabs}
+\usepackage[french]{babel}
 %  \usepackage[T1]{fontenc}
 %  \usepackage[latin1]{inputenc}
-\usepackage[french]{babel}
 \usepackage{algorithm2e}
 
 \mode<presentation> {
@@ -70,7 +70,7 @@
 }
 
 \title[État des lieux]{Plate-forme d'entrainement de gestion de crise}
-\author{Brandon Alves}
+\author{Brandon Alves, Antoine Boutet}
 \institute[INSA Lyon]{
 	INSA Lyon \\
 	\medskip
@@ -86,53 +86,59 @@
 		\frametitle{Table des matières}
 		\tableofcontents
 	\end{frame}
-	\section{Architecture du SI existante}
+	\section{Architecture du SI}
 		\begin{frame}
-			\frametitle{Architecture du SI existante}
+			\frametitle{Architecture du SI}
 			\begin{block}{Clients}
 				\begin{itemize}
-					\item client1 (Debian 10)
-					\item admin (Debian 10)
+					\item debian-client1 (Debian 10)
+					\item debian-client2 (Debian 10) : machine du patron
 				\end{itemize}
 			\end{block}
 			\begin{block}{Serveurs}
 				\begin{itemize}
-					\item web (Debian 9)
+					\item debian-web (Debian 9)
 					\begin{itemize}
 						\item dans DMZ
 						\item LAMP
 					\end{itemize}
-					\item mail (Debian 9)
+					\item debian-mail (Debian 9)
 					\begin{itemize}
 						\item Poste.io
 					\end{itemize}
-					\item dns (Debian 9)
+					\item debian-dns (Debian 9)
 					\begin{itemize}
-						\item BIND
+						\item BIND9
 					\end{itemize}
+					\item debian-file (Debian 9)
 				\end{itemize}
 			\end{block}
 		\end{frame}
 		\begin{frame}
-			\frametitle{Architecture du SI existante}
+			\frametitle{Architecture du SI}
 			\begin{block}{Routeur}
 				\begin{itemize}
 					\item pfsense (Freebsd)
-					\item 5 interfaces (internet, administration, dmz, clients, services)
+					\item 5 interfaces (WAN, administration, dmz, clients, services)
 					\item Firewall pfSense
 					\item DHCP
 				\end{itemize}
 			\end{block}
 			\begin{block}{Attaquant}
 				\begin{itemize}
-					\item attacker (Debian 9)
+					\item debian-attacker (Debian 9)
 					\item dans l'internet
 					\item dispose de scripts permettant de lancer différentes attaques
 				\end{itemize}
 			\end{block}
+			\begin{block}{Administrateur}
+				\begin{itemize}
+					\item debian-admin (Debian 10) : machine de l'administrateur
+				\end{itemize}
+			\end{block}
 		\end{frame}
 		\begin{frame}
-			\frametitle{Architecture du SI existante}
+			\frametitle{Architecture du SI}
 			\begin{center}
 				\begin{figure}
 					\includegraphics[scale=.3]{si.png}
@@ -140,23 +146,99 @@
 				\end{figure}
 			\end{center}
 		\end{frame}
-		\section{Attaques existantes}
+	\section{Attaques}
 		\begin{frame}
-			\frametitle{Attaques existantes}
+			\frametitle{Attaques}
 			\begin{itemize}
 				\item Attaque SSH par force brute
 				\item Attaque par déni de service (x2 dont \textit{Slowloris})
 			\end{itemize}
 		\end{frame}
-		\section{Informations}
+	\section{Informations}
 		\begin{frame}
 			\frametitle{Comptes utilisateurs}
-			\begin{block}{Sur chaque machine : 1 compte}
-				\begin{itemize}
-					\item login = $<$nom de la machine$>$
-					\item password = password
-				\end{itemize}
-			\end{block}
+			\begin{alertblock}{Sur \textit{debian-web}, \textit{debian-dns}, \textit{debian-mail}, \textit{debian-file}, \textit{debian-admin}, \textit{debian-client1} :}
+				\begin{description}
+					\item[login] admin
+					\item[password] password
+				\end{description}
+			\end{alertblock}
+			\begin{alertblock}{Sur \textit{debian-client1} :}
+				\begin{columns}
+					\begin{column}{.28\linewidth}
+						\begin{description}
+							\item[login] mcurie
+							\item[password] fleur
+						\end{description}
+					\end{column}
+					\begin{column}{.29\linewidth}
+						\begin{description}
+							\item[login] lpasteur
+							\item[password] 12345
+						\end{description}
+					\end{column}
+					\begin{column}{.34\linewidth}
+						\begin{description}
+							\item[login] hpoincare
+							\item[password] motdepasse
+						\end{description}
+					\end{column}
+				\end{columns}
+			\end{alertblock}
+			\begin{alertblock}{Sur \textit{debian-client2} :}
+				\begin{description}
+					\item[login] pdupont
+					\item[password] argent
+				\end{description}
+			\end{alertblock}
+		\end{frame}
+		\begin{frame}
+			\frametitle{Mails utilisateurs}
+			\begin{alertblock}{admin :}
+				\begin{description}
+					\item[login] admin@frenchleather.com
+					\item[password] password
+				\end{description}
+			\end{alertblock}
+			\begin{alertblock}{pdupont :}
+				\begin{description}
+					\item[login] pierre.dupont@frenchleather.com
+					\item[password] argent
+				\end{description}
+			\end{alertblock}
+		\end{frame}
+		\begin{frame}
+			\frametitle{Mails utilisateurs}
+			\begin{alertblock}{mcurie :}
+				\begin{description}
+					\item[login] marie.curie@frenchleather.com
+					\item[password] fleur
+				\end{description}
+			\end{alertblock}
+			\begin{alertblock}{lpasteur :}
+				\begin{description}
+					\item[login] louis.pasteur@frenchleather.com
+					\item[password] 12345
+				\end{description}
+			\end{alertblock}
+			\begin{alertblock}{hpoincare :}
+				\begin{description}
+					\item[login] henri.poincare@frenchleather.com
+					\item[password] motdepasse
+				\end{description}
+			\end{alertblock}
+		\end{frame}
+		\begin{frame}
+			\frametitle{SSH}
+			Toutes les machines sont accessible par le protocole SSH.
+		\end{frame}
+		\begin{frame}
+			\frametitle{Web}
+			Le site internet de l'entreprise est accessible à l'url : \url{www.frenchleather.com}
+		\end{frame}
+		\begin{frame}
+			\frametitle{Messagerie}
+			Une interface web de messagerie est disponnible à l'url : \url{mail.frenchleather.com}
 		\end{frame}
 		\begin{frame}
 			\frametitle{NAT}
@@ -194,7 +276,7 @@
 				\end{figure}
 			\end{center}
 		\end{frame}
-		\section{Sujet summer school}
+	\section{Sujet summer school}
 		\begin{frame}
 			\frametitle{Sujet summer school}
 			\begin{block}{Description}

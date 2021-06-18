@@ -14,4 +14,6 @@ debian-dns	IN	A	192.168.2.51
 debian-file	IN	A	192.168.2.52
 debian-mail	IN	A	192.168.2.50
 debian-web	IN	A	192.168.4.50
+www	IN	CNAME	debian-web
+mail	IN	CNAME	debian-mail
 

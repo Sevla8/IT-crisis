@@ -1,0 +1,10 @@
+céer des clés ssh pour admin;
+personaliser site web;
+mettre dans slides les règles utilisateurs;
+recenser les comptes utilisateurs;		OK
+
+compte twitter
+flux twitter sur site web		OK
+vente en ligne
+
+rajouter serveur de fichier		OK

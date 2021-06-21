@@ -5,9 +5,12 @@ changer nom de domain;																		OK
 alias www pour debian-web;																	OK
 créer la machine du patron																	OK
 créer des comptes utilisateurs;																OK
-créer des adresses mails pour chaque utilisateur;
-changer nom de domaine des adresses mail;
-personaliser site web;							
-lister les règles du firewall;					
-permettre à l'attaquant d'envoyer des mails;		
-vente en ligne;									
+créer des adresses mails pour chaque utilisateur;											OK
+changer nom de domaine des adresses mail;													OK
+permettre à l'attaquant d'envoyer des mails;												OK
+lister les règles du firewall;																OK
+personaliser site web;																		
+vente en ligne;																				
+DoS
+script envoie mail
+scrip ssh brute force		

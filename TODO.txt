@@ -1,10 +1,16 @@
-céer des clés ssh pour admin;
-personaliser site web;
-mettre dans slides les règles utilisateurs;
-recenser les comptes utilisateurs;		OK
-
-compte twitter
-flux twitter sur site web		OK
-vente en ligne
-
-rajouter serveur de fichier		OK
+recenser les comptes utilisateurs;															OK
+flux twitter sur site web;																	OK
+rajouter serveur de fichier;																OK
+changer nom de domain;																		OK	
+alias www pour debian-web;																	OK
+créer la machine du patron																	OK
+créer des comptes utilisateurs;																OK
+créer des adresses mails pour chaque utilisateur;											OK
+changer nom de domaine des adresses mail;													OK
+permettre à l'attaquant d'envoyer des mails;												OK
+lister les règles du firewall;																OK
+personaliser site web;																		
+vente en ligne;																				
+DoS
+script envoie mail
+scrip ssh brute force		

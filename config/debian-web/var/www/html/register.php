@@ -97,7 +97,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>My Awesome Company </title>
+    <title>French Leather SA</title>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
 </head>
@@ -113,7 +113,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <li role="presentation"><a href="joinus.php">Join us</a></li>
           </ul>
         </nav>
-        <h3 class="text-muted">My Awesome Company</h3>
+        <a href="index.php"><img src="img/logo.jpg" height="70px"></a>
+        <h3 class="text-muted">French Leather SA</h3>
       </div>
 
       <div class="jumbotron">

@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+# source: https://www.thepythoncode.com/article/brute-force-ssh-servers-using-paramiko-in-python
+
 import paramiko
 import socket
 import time

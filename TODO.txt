@@ -3,14 +3,37 @@ flux twitter sur site web;																	OK
 rajouter serveur de fichier;																OK
 changer nom de domain;																		OK	
 alias www pour debian-web;																	OK
-créer la machine du patron																	OK
+créer la machine du patron;																	OK
 créer des comptes utilisateurs;																OK
 créer des adresses mails pour chaque utilisateur;											OK
 changer nom de domaine des adresses mail;													OK
 permettre à l'attaquant d'envoyer des mails;												OK
 lister les règles du firewall;																OK
-personaliser site web;																		
+personaliser site web;																		OK
+scrip ssh brute force;																		OK
+script envoie mail;																			OK
+script doS;																					OK
+scrip defacement;																			OK
+malware - serveur down;																		OK
+automatiser;																				OK
+log actions;																				OK
+crypter la partition																		OK
+listes les régles du firewall																OK
+lister les outils de monitauring : courbes, ...												OK
+lister les vulnérabilités, ex defacing vulnérabilité de apache								OK
+déchainement sur les résauex sociaux;														O
+envoyer des mails déchainement résaux sociaux												
+creer une interface web pour monitorer les d'attaques										
+plusieurs types d'attaques dos : ping (ICMP), différents protocols,vers serveur mail, ...	
+schema DoS																					
+server file down pas besoin de crypter														
 vente en ligne;																				
-DoS
-script envoie mail
-scrip ssh brute force		
+problème DUP;																				
+
+
+
+envoyer des mails
+voir comment les filtrer
+voir spam mail 
+
+17/18 novembre

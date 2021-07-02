@@ -69,8 +69,8 @@
 	\end{frame}
 }
 
-\title[État des lieux]{Plate-forme d'entrainement de gestion de crise}
-\author{Brandon Alves, Antoine Boutet}
+\title[Audit]{Plate-forme d'entrainement de gestion de crise}
+\author{Brandon Alves}
 \institute[INSA Lyon]{
 	INSA Lyon \\
 	\medskip
@@ -146,13 +146,42 @@
 				\end{figure}
 			\end{center}
 		\end{frame}
-	\section{Attaques}
+	\section{Vulnérabilités \& Attaques}
 		\begin{frame}
-			\frametitle{Attaques}
+			\frametitle{Vulnérabilités \& Attaques}
+			Vulnérabilités :
 			\begin{itemize}
-				\item Attaque SSH par force brute
-				\item Attaque par déni de service (x2 dont \textit{Slowloris})
+				\item Tout les comptes utilisateurs ont des mots de passe faibles;
+				\item Tout les comptes mails ont des mots de passe faibles;
+				\item RFI : vulnérabilité propre à Apache2;
+				\item Ancun filtre contre les spams mis en place;
+				\item Le firewall laisse tout passer.
 			\end{itemize}
+		\end{frame}
+		\begin{frame}
+			\frametitle{Vulnérabilités \& Attaques}
+			\begin{block}{Attaque SSH par force brute}
+				Script qui tente de se connecter en SSH à la passerelle avec pour nom d'utilisateur \textit{admin} et pour mot de passe, un mot de passe contenue dans une liste de mots de passe français les plus courants.
+				Lorsqu'une combinaison pemet d'établir la connexion, celle ci est enregistrée dans un fichier.
+			\end{block}
+		\end{frame}
+		\begin{frame}
+			\frametitle{Vulnérabilités \& Attaques}
+			\begin{block}{Attaque par déni de service (\textit{Slowloris})}
+				Script qui envoie des requêtes HTTP partielles au serveur web, à intervalle régulier, afin de garder les sockets de celui ci ouverts.
+			\end{block}
+		\end{frame}
+		\begin{frame}
+			\frametitle{Vulnérabilités \& Attaques}
+			\begin{block}{Défacement de site web}
+				Script qui utilise une vulnérabilité RFI (Remote FIle Inclusion). Utilise le programme \textit{weevely} pour se connecter en SSH au serveur.
+			\end{block}
+		\end{frame}
+		\begin{frame}
+			\frametitle{Vulnérabilités \& Attaques}
+			\begin{block}{Phishing}
+				Script qui envoie des mails aux différents utilisateurs. Le mail demande de se connecter à un site en entrant ses identifiants. L'attaquant récupère ces derniers.
+			\end{block}
 		\end{frame}
 	\section{Informations}
 		\begin{frame}
@@ -249,46 +278,89 @@
 				\end{figure}
 			\end{center}
 		\end{frame}
-	\section{Sujet summer school}
 		\begin{frame}
-			\frametitle{Sujet summer school}
-			\begin{block}{Description}
-				\begin{itemize}
-					\item FrenchLeather SA
-					\item tannerie
-					\item région Lyonnaise
-					\item travail comporte des risques pour les employés
-					\item conditions de travail difficiles
-					\item produits toxiques plus aventageux économiquement que produits bios
-				\end{itemize}
-			\end{block}
+			\frametitle{Enregistrements DNS}
+			$\$$ORIGIN frenchleather.com.
+			\begin{center}
+				\begin{table}[h!]
+					\centering
+					\begin{tabular}{||c c c||}
+						\hline
+						Input & Type & Output \\
+						\hline\hline
+						 & SOA & debian-dns admin \\
+						 & NS & debian-dns \\
+						 & MX & 10 debian-mail \\
+						debian-admin & A & 192.168.1.50 \\
+						debina-dns & A & 192.168.2.51 \\
+						debian-mail & A & 192.168.2.50 \\
+						debian-web & A & 192.168.4.50 \\
+						www & CNAME & debian-web \\
+						mail & CNAME & debian-mail \\
+						file & CNAME & debian-file \\
+						ns & CNAME & debian-dns \\
+						\hline
+					\end{tabular}
+					\caption{Enregistrements DNS}
+					\label{table:1}
+					\end{table}
+			\end{center}
 		\end{frame}
 		\begin{frame}
-			\frametitle{Sujet summer school}
-			\begin{block}{On peut imaginer \ldots}
-				\begin{itemize}
-					\item vente en ligne $\rightarrow$ seveur web $\rightarrow$ DoS
-					\item adresses de messagerie professionnel $\rightarrow$ piratage du compte du patron $\rightarrow$ chantage
-					\item serveur de fichier ? des photos du patron avec sa maitresse ? $\rightarrow$ l'attaquant arrive à s'y introduire récupère les images et fait chanter
-					\item serveur de base de données $\rightarrow$ contient : CA, nb de bléssés, salaire, employés non déclarés, \ldots
+			\frametitle{Outils de monitoring du SI}
+			Un tableau de bord est accessible à l'adresse \url{192.168.1.1}.
+
+			Différents outils de monitoring :
+			\begin{itemize}
+				\item état des différentes interfaces;
+				\item informations générales sur l'état du routeur;
+				\item status des différnts services du routeur;
+				\item statistiques sur les interfaces;
+				\item graphes représentant le traffic au niveau des interfaces;
+				\item pfTop : différentes connexions établies;
+				\item ...
 				\end{itemize}
-			\end{block}
 		\end{frame}
-		\begin{frame}
-			\frametitle{Sujet summer school}
-			\begin{block}{Autres attaques}
-				\begin{itemize}
-					\item injection SQL sur le site web de l'entreprise
-					\item phishing par mail
-					\item ransomeware sur des données sensibles
-					\item spyware
-				\end{itemize}
-			\end{block}
-		\end{frame}
-	\begin{frame}
-		\begin{itemize}
-			\item \url{https://www.oodrive.com/fr/blog/securite/top-10-differents-types-cyberattaques/}
-			\item \url{https://zeltser.com/malware-sample-sources/}
-		\end{itemize}
-	\end{frame}
+	% \section{Sujet summer school}
+	% 	\begin{frame}
+	% 		\frametitle{Sujet summer school}
+	% 		\begin{block}{Description}
+	% 			\begin{itemize}
+	% 				\item FrenchLeather SA
+	% 				\item tannerie
+	% 				\item région Lyonnaise
+	% 				\item travail comporte des risques pour les employés
+	% 				\item conditions de travail difficiles
+	% 				\item produits toxiques plus aventageux économiquement que produits bios
+	% 			\end{itemize}
+	% 		\end{block}
+	% 	\end{frame}
+	% 	\begin{frame}
+	% 		\frametitle{Sujet summer school}
+	% 		\begin{block}{On peut imaginer \ldots}
+	% 			\begin{itemize}
+	% 				\item vente en ligne $\rightarrow$ seveur web $\rightarrow$ DoS
+	% 				\item adresses de messagerie professionnel $\rightarrow$ piratage du compte du patron $\rightarrow$ chantage
+	% 				\item serveur de fichier ? des photos du patron avec sa maitresse ? $\rightarrow$ l'attaquant arrive à s'y introduire récupère les images et fait chanter
+	% 				\item serveur de base de données $\rightarrow$ contient : CA, nb de bléssés, salaire, employés non déclarés, \ldots
+	% 			\end{itemize}
+	% 		\end{block}
+	% 	\end{frame}
+	% 	\begin{frame}
+	% 		\frametitle{Sujet summer school}
+	% 		\begin{block}{Autres attaques}
+	% 			\begin{itemize}
+	% 				\item injection SQL sur le site web de l'entreprise
+	% 				\item phishing par mail
+	% 				\item ransomeware sur des données sensibles
+	% 				\item spyware
+	% 			\end{itemize}
+	% 		\end{block}
+	% 	\end{frame}
+	% \begin{frame}
+	% 	\begin{itemize}
+	% 		\item \url{https://www.oodrive.com/fr/blog/securite/top-10-differents-types-cyberattaques/}
+	% 		\item \url{https://zeltser.com/malware-sample-sources/}
+	% 	\end{itemize}
+	% \end{frame}
 \end{document}

@@ -21,9 +21,10 @@ crypter la partition																		OK
 listes les régles du firewall																OK
 lister les outils de monitauring : courbes, ...												OK
 lister les vulnérabilités, ex defacing vulnérabilité de apache								OK
+debian-attacker en attacker																	OK
 déchainement sur les résauex sociaux;														O
 envoyer des mails déchainement résaux sociaux												
-creer une interface web pour monitorer les d'attaques										
+creer une interface web pour monitorer les d'attaques										O
 plusieurs types d'attaques dos : ping (ICMP), différents protocols,vers serveur mail, ...	
 schema DoS																					
 server file down pas besoin de crypter														

@@ -1,0 +1,53 @@
+
+IT-Crisis:
+	TODO:
+		mettre à jour les slides:
+			[x] schema admin de l'exo
+			[] 1 slide : hebergement vs local
+			[] 1 machine virtuel pour chaque cellue de crise, qui contient un SI (nested virtualization)
+		[] organisation des différentes cellules de crises au niveau du déploiement de l'architecture
+		[] malware -> ransomware @today
+		[] voir comment isoler les differentes cellules de crises @today
+		[] mdp compte utilisateur : doit plus pouvoir se connecter
+		[] au niveau du firewall
+		[] plusieurs types d'attaques dos : ping (ICMP), différents protocols,vers serveur mail, ...
+		[] schema DoS
+		[] vente en ligne;
+		[] problème DUP;
+		[] voir comment filtrer mail
+		[] voir spam mail
+		[] https
+		[] phpinfo
+		[] contraindre capacité réseau de certain liens
+		[] arreter les attaques dos
+		[] attaques transparentes aux étudiant (firewall)
+	Canceled:
+	Done:
+		[x] recenser les comptes utilisateurs
+		[x] flux twitter sur site web
+		[x] ajouter serveur de fichier
+		[x] changer nom de domain
+		[x] alias www pour debian-web
+		[x] créer la machine du patron
+		[x] créer des comptes utilisateurs
+		[x] créer des adresses mails pour chaque utilisateur
+		[x] changer nom de domaine des adresses mail
+		[x] permettre à l'attaquant d'envoyer des mails
+		[x] lister les règles du firewall
+		[x] personaliser site web
+		[x] scrip ssh brute force
+		[x] script envoie mail
+		[x] script doS
+		[x] scrip defacement
+		[x] malware - serveur down
+		[x] automatiser
+		[x] log actions
+		[x] crypter la partition
+		[x] listes les régles du firewall
+		[x] lister les outils de monitauring : courbes, ...
+		[x] lister les vulnérabilités, ex defacing vulnérabilité de apache
+		[x] debian-attacker en attacker
+		[x] creer une interface web pour monitorer les d'attaques
+		[x] server file down pas besoin de crypter
+		[x] envoyer des mails déchainement
+		[x] déchainement sur les réseaux sociaux

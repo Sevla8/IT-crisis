@@ -155,12 +155,13 @@
 					\item Connexion via \textit{Bureau à distance};
 					\item Dépendant du réseau internet entre les machines et le serveur;
 					\item Puissance de calcul plus élevée;
+					\item Pas de conflit entre les différnetes cellules de crises.
 				\end{itemize}
 			\end{block}
 			\begin{block}{Local}
 				\begin{itemize}
 					\item Indépendant du réseau internet entre les machines et le serveur;
-					\item Si beaucoup de cellules de crises,
+					\item Difficile de faire tourner plus d'une cellule de crise sur un laptop.
 				\end{itemize}
 			\end{block}
 		\end{frame}
@@ -173,7 +174,7 @@
 				\item Tout les comptes mails ont des mots de passe faibles;
 				\item RFI : vulnérabilité propre à Apache2;
 				\item Ancun filtre contre les spams mis en place;
-				\item Le firewall laisse tout passer.
+				\item Firewall très permissif.
 			\end{itemize}
 		\end{frame}
 		\begin{frame}
@@ -262,6 +263,12 @@
 					\item[password] argent
 				\end{description}
 			\end{alertblock}
+			\begin{alertblock}{contact :}
+				\begin{description}
+					\item[login] contact@frenchleather.com
+					\item[password] contact
+				\end{description}
+			\end{alertblock}
 		\end{frame}
 		\begin{frame}
 			\frametitle{Mails utilisateurs 2/2}
@@ -286,22 +293,46 @@
 		\end{frame}
 		\begin{frame}
 			\frametitle{SSH}
-			Toutes les machines sont accessible par le protocole SSH.
+			Depuis l'extérieur, le SI est accessible via le protocole SSH sur la machine \textit{debian-file}.
 		\end{frame}
 		\begin{frame}
 			\frametitle{Web}
-			Le site internet de l'entreprise est accessible à l'url : \url{www.frenchleather.com}
+			Le site internet de l'entreprise est accessible à l'url : \url{http://www.frenchleather.com}
 		\end{frame}
 		\begin{frame}
 			\frametitle{Messagerie}
-			Une interface web de messagerie est disponnible à l'url : \url{mail.frenchleather.com}
+			Une interface web de messagerie est disponnible à l'url : \url{http://mail.frenchleather.com}
 		\end{frame}
 		\begin{frame}
-			\frametitle{NAT}
+			\frametitle{Outils de monitoring du SI}
+			Un tableau de bord est accessible à l'adresse \url{http://192.168.1.1} (login: \textit{admin}, password: \textit{password}).
+
+			Différents outils de monitoring :
+			\begin{itemize}
+				\item état des différentes interfaces;
+				\item informations générales sur l'état du routeur;
+				\item status des différnts services du routeur;
+				\item statistiques sur les interfaces;
+				\item graphes représentant le traffic au niveau des interfaces;
+				\item pfTop : différentes connexions établies;
+				\item ...
+			\end{itemize}
+		\end{frame}
+		\begin{frame}
+			\frametitle{Firewall : règles}
+			\begin{center}
+				\begin{figure}
+					\includegraphics[scale=.3]{rule.png}
+					\caption{Règles filtrantes du firewall}
+				\end{figure}
+			\end{center}
+		\end{frame}
+		\begin{frame}
+			\frametitle{Firewall : NAT}
 			\begin{center}
 				\begin{figure}
 					\includegraphics[scale=.3]{nat.png}
-					\caption{NAT}
+					\caption{Translations du firewall}
 				\end{figure}
 			\end{center}
 		\end{frame}
@@ -334,60 +365,49 @@
 			\end{center}
 		\end{frame}
 		\begin{frame}
-			\frametitle{Outils de monitoring du SI}
-			Un tableau de bord est accessible à l'adresse \url{192.168.1.1}.
-
-			Différents outils de monitoring :
-			\begin{itemize}
-				\item état des différentes interfaces;
-				\item informations générales sur l'état du routeur;
-				\item status des différnts services du routeur;
-				\item statistiques sur les interfaces;
-				\item graphes représentant le traffic au niveau des interfaces;
-				\item pfTop : différentes connexions établies;
-				\item ...
-				\end{itemize}
+			\frametitle{Pfsense}
+			\begin{center}
+				\begin{figure}
+					\includegraphics[scale=.24]{pfsense.png}
+					\caption{Interface du routeur}
+				\end{figure}
+			\end{center}
 		\end{frame}
-	% \section{Sujet summer school}
-	% 	\begin{frame}
-	% 		\frametitle{Sujet summer school}
-	% 		\begin{block}{Description}
-	% 			\begin{itemize}
-	% 				\item FrenchLeather SA
-	% 				\item tannerie
-	% 				\item région Lyonnaise
-	% 				\item travail comporte des risques pour les employés
-	% 				\item conditions de travail difficiles
-	% 				\item produits toxiques plus aventageux économiquement que produits bios
-	% 			\end{itemize}
-	% 		\end{block}
-	% 	\end{frame}
-	% 	\begin{frame}
-	% 		\frametitle{Sujet summer school}
-	% 		\begin{block}{On peut imaginer \ldots}
-	% 			\begin{itemize}
-	% 				\item vente en ligne $\rightarrow$ seveur web $\rightarrow$ DoS
-	% 				\item adresses de messagerie professionnel $\rightarrow$ piratage du compte du patron $\rightarrow$ chantage
-	% 				\item serveur de fichier ? des photos du patron avec sa maitresse ? $\rightarrow$ l'attaquant arrive à s'y introduire récupère les images et fait chanter
-	% 				\item serveur de base de données $\rightarrow$ contient : CA, nb de bléssés, salaire, employés non déclarés, \ldots
-	% 			\end{itemize}
-	% 		\end{block}
-	% 	\end{frame}
-	% 	\begin{frame}
-	% 		\frametitle{Sujet summer school}
-	% 		\begin{block}{Autres attaques}
-	% 			\begin{itemize}
-	% 				\item injection SQL sur le site web de l'entreprise
-	% 				\item phishing par mail
-	% 				\item ransomeware sur des données sensibles
-	% 				\item spyware
-	% 			\end{itemize}
-	% 		\end{block}
-	% 	\end{frame}
-	% \begin{frame}
-	% 	\begin{itemize}
-	% 		\item \url{https://www.oodrive.com/fr/blog/securite/top-10-differents-types-cyberattaques/}
-	% 		\item \url{https://zeltser.com/malware-sample-sources/}
-	% 	\end{itemize}
-	% \end{frame}
+		\begin{frame}
+			\frametitle{Rspamd}
+			\begin{center}
+				\begin{figure}
+					\includegraphics[scale=.25]{rspamd.png}
+					\caption{Interface de l'antispam mail}
+				\end{figure}
+			\end{center}
+		\end{frame}
+		\begin{frame}
+			\frametitle{Site web de l'entreprise}
+			\begin{center}
+				\begin{figure}
+					\includegraphics[scale=.24]{www.png}
+					\caption{Page d'accueil du site de l'entreprise}
+				\end{figure}
+			\end{center}
+		\end{frame}
+		\begin{frame}
+			\frametitle{Interface de l'attaquant}
+			\begin{center}
+				\begin{figure}
+					\includegraphics[scale=.2]{attacker.png}
+					\caption{Interface de l'attaquant}
+				\end{figure}
+			\end{center}
+		\end{frame}
+		\begin{frame}
+			\frametitle{Outils d'aide au controle des participants}
+			\begin{itemize}
+				\item Sur chaque machine, les commandes tapées sont enregistrées dans \url{/home/admin/.history/history.txt};
+				\item Pour le firewall, on peut voir sur l'interface web du routeur ce qui a été modifié;
+				\item Mesure du temps durant lequel le site web de l'entreprise est resté défacé;
+				\item Mesure du temps durant lequel le temps de réponse à une requête au site web est trop long (pour le DoS);
+				\item Nombres d'identifiant de connexions découverts (par l'attaque SSH ou phishing)
+			\end{itemize}
+		\end{frame}
 \end{document}

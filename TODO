@@ -1,53 +1,79 @@
-
 IT-Crisis:
 	TODO:
-		mettre à jour les slides:
-			[x] schema admin de l'exo
-			[] 1 slide : hebergement vs local
-			[] 1 machine virtuel pour chaque cellue de crise, qui contient un SI (nested virtualization)
-		[] organisation des différentes cellules de crises au niveau du déploiement de l'architecture
-		[] malware -> ransomware @today
-		[] voir comment isoler les differentes cellules de crises @today
-		[] mdp compte utilisateur : doit plus pouvoir se connecter
-		[] au niveau du firewall
+		[] frenchleather existe dejà @today
+		[] Mettre à jour l'attaque social networks outburts @today
+		[] Mettre à jour l'attaque ransomware @today
+		[] Miroir debian dans sous réseaux
+		[] Simuler que le patron a cliqué sur le mail de phishing si pas de sensibilisation contre phishing dans la demie heure -> chantage
+		[] Campagne de sensibilisation phishing en cours
+		[] En première page volumineux
+		[] Ajouter champs IP dans ssh brute force @today
+		reporting:
+			[] courbe dispo du site web
+			[] ouvert, clique lien, remplit info
+			[] Mots de passes faibles encore à la fin
+		[] changer les adresses ip src des paquets pour adapter les réponses des mesures contre les attaques
+		[] ddos
+		[] dns attack
 		[] plusieurs types d'attaques dos : ping (ICMP), différents protocols,vers serveur mail, ...
 		[] schema DoS
-		[] vente en ligne;
-		[] problème DUP;
 		[] voir comment filtrer mail
-		[] voir spam mail
 		[] https
 		[] phpinfo
 		[] contraindre capacité réseau de certain liens
-		[] arreter les attaques dos
 		[] attaques transparentes aux étudiant (firewall)
 	Canceled:
+		[-] problème DUP;
+		[-] vente en ligne;
 	Done:
-		[x] recenser les comptes utilisateurs
-		[x] flux twitter sur site web
-		[x] ajouter serveur de fichier
-		[x] changer nom de domain
-		[x] alias www pour debian-web
-		[x] créer la machine du patron
-		[x] créer des comptes utilisateurs
-		[x] créer des adresses mails pour chaque utilisateur
-		[x] changer nom de domaine des adresses mail
-		[x] permettre à l'attaquant d'envoyer des mails
-		[x] lister les règles du firewall
-		[x] personaliser site web
-		[x] scrip ssh brute force
-		[x] script envoie mail
-		[x] script doS
-		[x] scrip defacement
-		[x] malware - serveur down
-		[x] automatiser
-		[x] log actions
-		[x] crypter la partition
-		[x] listes les régles du firewall
-		[x] lister les outils de monitauring : courbes, ...
-		[x] lister les vulnérabilités, ex defacing vulnérabilité de apache
-		[x] debian-attacker en attacker
-		[x] creer une interface web pour monitorer les d'attaques
-		[x] server file down pas besoin de crypter
-		[x] envoyer des mails déchainement
-		[x] déchainement sur les réseaux sociaux
+		[+] ransomware physiquement plutot que interface web
+		[+] virtualbox command pour ordre box
+		[+] Commandes virtuels box pour rendre la machine debian-file inopérante
+		[+] Faire vrai twitter où ils peuvent écrire
+		[+] dos : temps chargement page web
+		[+] temps page defacer
+		[+] outburst social if
+		[+] captures d'écran dans slides
+		[+] >> plutôt que > dans get_history.sh
+		[+] ajouter schema
+		[+] pas interface down : mdp compte utilisateur : doit plus pouvoir se connecter
+		[+] defacing interface web
+		[+] phishing interface web
+		[+] 1 slide : hebergement vs local
+		[+] 1 machine virtuel pour chaque cellue de crise, qui contient un SI (nested virtualization)
+		[+] voir comment isoler les differentes cellules de crises
+		[+] organisation des différentes cellules de crises au niveau du déploiement de l'architecture
+		[+] voir spam mail : rspamd
+		[+] ajouter compte mail _contact@frenchleather.com_
+		[+] schema admin de l'exo
+		[+] afficher pastille pour les attaques en cours
+		[+] malware -> ransomware
+		[+] arreter les attaques dos
+		[+] recenser les comptes utilisateurs
+		[+] flux twitter sur site web
+		[+] ajouter serveur de fichier
+		[+] changer nom de domain
+		[+] alias www pour debian-web
+		[+] créer la machine du patron
+		[+] créer des comptes utilisateurs
+		[+] créer des adresses mails pour chaque utilisateur
+		[+] changer nom de domaine des adresses mail
+		[+] permettre à l'attaquant d'envoyer des mails
+		[+] lister les règles du firewall
+		[+] personaliser site web
+		[+] scrip ssh brute force
+		[+] script envoie mail
+		[+] script doS
+		[+] scrip defacement
+		[+] malware - serveur down
+		[+] automatiser
+		[+] log actions
+		[+] crypter la partition
+		[+] listes les régles du firewall
+		[+] lister les outils de monitauring : courbes, ...
+		[+] lister les vulnérabilités, ex defacing vulnérabilité de apache
+		[+] debian-attacker en attacker
+		[+] creer une interface web pour monitorer les d'attaques
+		[+] server file down pas besoin de crypter
+		[+] envoyer des mails déchainement
+		[+] déchainement sur les réseaux sociaux

@@ -1,20 +1,17 @@
 IT-Crisis:
 	TODO:
-		[] frenchleather existe dejà @today
-		[] Mettre à jour l'attaque social networks outburts @today
 		[] Mettre à jour l'attaque ransomware @today
+		[] Mettre à jour l'attaque social networks outburts @today
 		[] Miroir debian dans sous réseaux
 		[] Simuler que le patron a cliqué sur le mail de phishing si pas de sensibilisation contre phishing dans la demie heure -> chantage
 		[] Campagne de sensibilisation phishing en cours
-		[] En première page volumineux
-		[] Ajouter champs IP dans ssh brute force @today
+		[] dns phishing attack
 		reporting:
 			[] courbe dispo du site web
 			[] ouvert, clique lien, remplit info
 			[] Mots de passes faibles encore à la fin
 		[] changer les adresses ip src des paquets pour adapter les réponses des mesures contre les attaques
 		[] ddos
-		[] dns attack
 		[] plusieurs types d'attaques dos : ping (ICMP), différents protocols,vers serveur mail, ...
 		[] schema DoS
 		[] voir comment filtrer mail
@@ -26,6 +23,9 @@ IT-Crisis:
 		[-] problème DUP;
 		[-] vente en ligne;
 	Done:
+		[+] Ajouter champs IP dans ssh brute force
+		[+] En première page volumineux
+		[+] frenchleather.com existe dejà -> frenchleather.fr
 		[+] ransomware physiquement plutot que interface web
 		[+] virtualbox command pour ordre box
 		[+] Commandes virtuels box pour rendre la machine debian-file inopérante

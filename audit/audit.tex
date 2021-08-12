@@ -76,7 +76,7 @@
 	\medskip
 	INRIA
 }
-\date{14 Juin 2021}
+\date{14 Juin 2021 - 13 Août 2021}
 
 \begin{document}
 	\begin{frame}
@@ -127,8 +127,8 @@
 			\begin{block}{Attaquant}
 				\begin{itemize}
 					\item debian-attacker (Debian 9)
-					\item dans l'internet
-					\item dispose de scripts permettant de lancer différentes attaques
+					\item dans le réseau local de la machine roulant VirtualBox
+					\item dispose de scripts ainsi que d'une interface web permettant de lancer différentes attaques
 				\end{itemize}
 			\end{block}
 			\begin{block}{Administrateur}
@@ -173,6 +173,7 @@
 				\item Tout les comptes utilisateurs ont des mots de passe faibles;
 				\item Tout les comptes mails ont des mots de passe faibles;
 				\item RFI : vulnérabilité propre à Apache2;
+				\item Aucun backup;
 				\item Ancun filtre contre les spams mis en place;
 				\item Firewall très permissif.
 			\end{itemize}
@@ -180,26 +181,43 @@
 		\begin{frame}
 			\frametitle{Vulnérabilités \& Attaques}
 			\begin{block}{Attaque SSH par force brute}
-				Script qui tente de se connecter en SSH à la passerelle avec pour nom d'utilisateur \textit{admin} et pour mot de passe, un mot de passe contenue dans une liste de mots de passe français les plus courants.
+				Script qui tente de se connecter en SSH à la passerelle avec un nom d'utilisateur et un mot de passe contenue dans une liste de mots de passe les plus fréquant.
 				Lorsqu'une combinaison pemet d'établir la connexion, celle ci est enregistrée dans un fichier.
 			\end{block}
-		\end{frame}
-		\begin{frame}
-			\frametitle{Vulnérabilités \& Attaques}
 			\begin{block}{Attaque par déni de service (\textit{Slowloris})}
-				Script qui envoie des requêtes HTTP partielles au serveur web, à intervalle régulier, afin de garder les sockets de celui ci ouverts.
+				Script qui envoie des requêtes HTTP partielles au serveur web, à intervalle régulier, afin de garder ses sockets ouverts.
+			\end{block}
+			\begin{block}{Attaque par déni de service (\textit{Ping})}
+				Script qui envoie des pings (requêtes ICMP) au serveur web à intervalle régulier obligeant celui ci à répondre.
 			\end{block}
 		\end{frame}
 		\begin{frame}
 			\frametitle{Vulnérabilités \& Attaques}
+			\begin{block}{Attaque par déni de service (\textit{UDP Flood})}
+				Script qui envoie un large nombre de paquets UDP à la passerelle à des ports aléatoires.
+				Le serveur doit alors vérifier qu'une application est en train d'écouter ou non sur ce port et répondre avec des paquets ICMP.
+			\end{block}
+			\begin{block}{Attaque par déni de service (\textit{TCP SYN Flood})}
+				Script qui envoie une succession de requêtes SYN vers la cible, initialisant une connexion (three-way handshake).
+				N'envoie pas le ACK final obligeant la cible a attendre un certain délais avant de fermer la connexion.
+			\end{block}
 			\begin{block}{Défacement de site web}
-				Script qui utilise une vulnérabilité RFI (Remote FIle Inclusion). Utilise le programme \textit{weevely} pour se connecter en SSH au serveur.
+				Script qui utilise une vulnérabilité RFI (Remote FIle Inclusion). Utilise le programme \textit{weevely} pour se connecter au serveur.
 			\end{block}
 		\end{frame}
 		\begin{frame}
 			\frametitle{Vulnérabilités \& Attaques}
 			\begin{block}{Phishing}
 				Script qui envoie des mails aux différents utilisateurs. Le mail demande de se connecter à un site en entrant ses identifiants. L'attaquant récupère ces derniers.
+			\end{block}
+			\begin{block}{Ransomware}
+				Script qui crypte le disque de la vm \textit{debian-file}.
+			\end{block}
+			\begin{block}{Spam (mail)}
+				Script qui permet de spamer les différents utilisateurs par mail.
+			\end{block}
+			\begin{block}{Spam (blog)}
+				Script qui permet de spammer sur le blog de l'entreprise.
 			\end{block}
 		\end{frame}
 	\section{Informations}
@@ -253,19 +271,19 @@
 			\frametitle{Mails utilisateurs 1/2}
 			\begin{alertblock}{admin :}
 				\begin{description}
-					\item[login] admin@frenchleather.com
+					\item[login] admin@frenchleather.fr
 					\item[password] password
 				\end{description}
 			\end{alertblock}
 			\begin{alertblock}{pdupont :}
 				\begin{description}
-					\item[login] pierre.dupont@frenchleather.com
+					\item[login] pierre.dupont@frenchleather.fr
 					\item[password] argent
 				\end{description}
 			\end{alertblock}
 			\begin{alertblock}{contact :}
 				\begin{description}
-					\item[login] contact@frenchleather.com
+					\item[login] contact@frenchleather.fr
 					\item[password] contact
 				\end{description}
 			\end{alertblock}
@@ -274,34 +292,49 @@
 			\frametitle{Mails utilisateurs 2/2}
 			\begin{alertblock}{mcurie :}
 				\begin{description}
-					\item[login] marie.curie@frenchleather.com
+					\item[login] marie.curie@frenchleather.fr
 					\item[password] fleur
 				\end{description}
 			\end{alertblock}
 			\begin{alertblock}{lpasteur :}
 				\begin{description}
-					\item[login] louis.pasteur@frenchleather.com
+					\item[login] louis.pasteur@frenchleather.fr
 					\item[password] 12345
 				\end{description}
 			\end{alertblock}
 			\begin{alertblock}{hpoincare :}
 				\begin{description}
-					\item[login] henri.poincare@frenchleather.com
+					\item[login] henri.poincare@frenchleather.fr
 					\item[password] motdepasse
 				\end{description}
 			\end{alertblock}
 		\end{frame}
 		\begin{frame}
 			\frametitle{SSH}
-			Depuis l'extérieur, le SI est accessible via le protocole SSH sur la machine \textit{debian-file}.
+			Depuis l'extérieur, le SI est accessible via le protocole SSH sur la machine \textit{debian-file} et la machine \textit{debian-web}.
 		\end{frame}
 		\begin{frame}
 			\frametitle{Web}
-			Le site internet de l'entreprise est accessible à l'url : \url{http://www.frenchleather.com}
+			Le site internet de l'entreprise est accessible à l'url : \url{http://www.frenchleather.fr}
 		\end{frame}
 		\begin{frame}
 			\frametitle{Messagerie}
-			Une interface web de messagerie est disponnible à l'url : \url{http://mail.frenchleather.com}
+			Une interface web de messagerie est disponnible à l'url : \url{http://mail.frenchleather.fr}
+		\end{frame}
+		\begin{frame}
+			\frametitle{Twitter}
+			\begin{alertblock}{FrenchLeather - Connexion avec Google}
+				\begin{description}
+					\item[login] frenchleathersa@gmail.com
+					\item[password] password123+
+				\end{description}
+			\end{alertblock}
+			\begin{alertblock}{Attaquant - Connexion avec Google}
+				\begin{description}
+					\item[login] attacker554@gmail.com
+					\item[password] 123password+
+				\end{description}
+			\end{alertblock}
 		\end{frame}
 		\begin{frame}
 			\frametitle{Outils de monitoring du SI}
@@ -338,7 +371,7 @@
 		\end{frame}
 		\begin{frame}
 			\frametitle{Enregistrements DNS}
-			$\$$ORIGIN frenchleather.com.
+			$\$$ORIGIN frenchleather.fr.
 			\begin{center}
 				\begin{table}[h!]
 					\centering

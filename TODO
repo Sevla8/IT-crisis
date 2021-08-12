@@ -1,18 +1,16 @@
 IT-Crisis:
 	TODO:
-		[] Mettre à jour l'attaque ransomware @today
-		[] Mettre à jour l'attaque social networks outburts @today
-		[] Miroir debian dans sous réseaux
+		[] revoir architecture @today
+		[] changer ip source attaquant
+		[] phishing attack changer domain name
 		[] Simuler que le patron a cliqué sur le mail de phishing si pas de sensibilisation contre phishing dans la demie heure -> chantage
 		[] Campagne de sensibilisation phishing en cours
-		[] dns phishing attack
 		reporting:
-			[] courbe dispo du site web
-			[] ouvert, clique lien, remplit info
 			[] Mots de passes faibles encore à la fin
 		[] changer les adresses ip src des paquets pour adapter les réponses des mesures contre les attaques
+			ping -I source address(x.x.x.x) target address(x.x.x.x)
 		[] ddos
-		[] plusieurs types d'attaques dos : ping (ICMP), différents protocols,vers serveur mail, ...
+		[] plusieurs types d'attaques dos : ping (ICMP), différents protocols, vers serveur mail, ...
 		[] schema DoS
 		[] voir comment filtrer mail
 		[] https
@@ -20,9 +18,18 @@ IT-Crisis:
 		[] contraindre capacité réseau de certain liens
 		[] attaques transparentes aux étudiant (firewall)
 	Canceled:
+		[-] Miroir debian dans sous réseaux
 		[-] problème DUP;
 		[-] vente en ligne;
 	Done:
+		[+] twitter
+		[+] revoir slides
+		[+] envoyer post sur le blog
+		[+] voir que tout marche bien
+		[+] phishing : clique lien, remplit info
+		[+] Mettre à jour l'attaque social networks outburts
+		[+] courbe dispo du site web
+		[+] Mettre à jour l'attaque ransomware
 		[+] Ajouter champs IP dans ssh brute force
 		[+] En première page volumineux
 		[+] frenchleather.com existe dejà -> frenchleather.fr

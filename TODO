@@ -1,6 +1,6 @@
 IT-Crisis:
 	TODO:
-		[] revoir architecture @today
+		[] revoir architecture
 		[] changer ip source attaquant
 		[] phishing attack changer domain name
 		[] Simuler que le patron a cliqué sur le mail de phishing si pas de sensibilisation contre phishing dans la demie heure -> chantage
@@ -8,9 +8,8 @@ IT-Crisis:
 		reporting:
 			[] Mots de passes faibles encore à la fin
 		[] changer les adresses ip src des paquets pour adapter les réponses des mesures contre les attaques
-			ping -I source address(x.x.x.x) target address(x.x.x.x)
+			ping -I source address(x.x.x.x) target address(x.x.x.x) pas possible avec n'importe quelle ip src
 		[] ddos
-		[] plusieurs types d'attaques dos : ping (ICMP), différents protocols, vers serveur mail, ...
 		[] schema DoS
 		[] voir comment filtrer mail
 		[] https
@@ -22,6 +21,7 @@ IT-Crisis:
 		[-] problème DUP;
 		[-] vente en ligne;
 	Done:
+		[+] plusieurs types d'attaques dos : ping (ICMP), différents protocols, vers serveur mail, ...
 		[+] twitter
 		[+] revoir slides
 		[+] envoyer post sur le blog

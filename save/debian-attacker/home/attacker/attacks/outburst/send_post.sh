@@ -1,0 +1,1 @@
+/home/attacker/attacks/spam/send_post.sh

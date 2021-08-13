@@ -26,8 +26,8 @@ def setupSocket(ip):
     return sock
 
 if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        print("Use it like this: python {} example.com".format(sys.argv[0]))
+    if len(sys.argv) < 2:
+        print("Use it like this: {} example.com".format(sys.argv[0]))
         sys.exit()
 
     ip = sys.argv[1]

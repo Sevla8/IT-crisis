@@ -1,0 +1,3 @@
+[submodule "save/debian-attacker/home/attacker/zphishe"]
+	path = save/debian-attacker/home/attacker/zphishe
+	url = git@github.com:htr-tech/zphisher.git
